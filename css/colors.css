@@ -1,0 +1,9 @@
+:root {
+    --darkSlate: rgb(2, 48, 71);
+    --slate: rgb(2, 48, 71, 0.8);
+    --darkBlue: rgb(33, 158, 188);
+    --lightBlue: rgb(142, 202, 230);
+    --lightOrange: rgb(255, 183, 3);
+    --darkerOrange: rgb(251, 133, 0);
+    --whiteFont: #eee;
+}

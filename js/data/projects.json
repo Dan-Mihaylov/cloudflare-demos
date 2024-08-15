@@ -1,0 +1,14 @@
+{
+    "card": {
+        "name": "Review Card",
+        "path": "some-path",
+        "description": "Simple review card, with a touch of JS",
+        "image": "https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=250&h=250&dpr=1"
+    },
+    "reviewee": {
+        "name": "Reviewee Website",
+        "path": "https://reviewee.xyz",
+        "description": "Fully operational review website, with functionality to add a restaurant or a hotel, review the hotel, and create bookings.",
+        "image": "https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+}
