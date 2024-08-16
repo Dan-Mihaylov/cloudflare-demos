@@ -1,0 +1,176 @@
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 14px/1.5 Lato, sans-serif;
+    padding: 2em;
+    background-color: #eee;
+    color: #00274f;
+}
+
+button {
+    border: none;
+    background-color: inherit;
+    font-size: 1.2rem;
+    color: #444;
+    transition: color 0.2s linear, opacity 0.5s linear;
+    opacity: 0;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #00274f;
+}
+
+.container {
+    opacity: 0;
+    max-width: 40em;
+    margin: 0 auto;
+    transition: opacity 1s ease;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.underline {
+    position: absolute;
+    bottom: 1.3em;
+    max-width: 5rem;
+    border-bottom: 2px solid rgb(113, 169, 214);
+    width: 100%;
+}
+
+.review {
+    position: relative;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em 0 rgb(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: box-shadow 0.5s ease-in;
+}
+
+.review:hover {
+    box-shadow: 0 0 1em 0 rgb(0,0,0,0.5);
+}
+
+#quote {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    max-width: 1.5em;
+    /* background-color: rgb(211, 227, 240); */
+    padding: 0.5em;
+    border-radius: 50%;
+    transition: opacity 1s ease;
+    font-size: 2em;
+    color: rgb(113, 169, 214);
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    max-width: 150px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0.3em -0.1em 0.3em 0.1em rgb(110, 164, 207);
+    transition: opacity 1s ease;
+}
+
+#image {
+    width: 100%;
+}
+
+#reviewer-name {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    transition: opacity 1s ease;
+}
+
+#reviewer-role {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-variant: small-caps;
+    color: rgb(113, 169, 214);
+    transition: opacity 1s ease;
+}
+
+#review-paragraph {
+    color: rgb(90, 105, 117);
+    font-size: 1.1em;
+    text-align: center;
+    transition: opacity 0.1s ease;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#previous-review {
+    font-size: 2em;
+    cursor: pointer;
+    padding-right: 1rem;
+    transition: color 0.5s ease-out;
+    color: rgb(113, 169, 214);
+}
+
+#previous-review:hover {
+    color: rgb(6, 51, 82);
+}
+
+#next-review {
+    font-size: 2em;
+    padding-left: 1rem;
+    cursor: pointer;
+    transition: color 0.5s ease-out;
+    color: rgb(113, 169, 214);
+}
+
+#next-review:hover {
+    color: rgb(6, 51, 82);
+}
+
+.button-surprise-me-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#surprise-review {
+    background-color: rgb(113, 169, 214);
+    border: none;
+    color: #fff;
+    padding: 0.3em 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 1s ease;
+}
+
+#surprise-review:hover {
+    background-color: rgb(13, 73, 122);
+    color: #fff;
+}
+

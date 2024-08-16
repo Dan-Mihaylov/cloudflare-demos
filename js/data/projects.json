@@ -1,10 +1,10 @@
 {
     "card": {
         "name": "Review Card",
-        "path": "some-path",
+        "path": "/projects/review-card/reviews.html",
         "description": "Simple review card, with a touch of JS",
-        "image": "https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=250&h=250&dpr=1"
-    },
+        "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1723823925/Screenshot_2024-08-16_163849_usvvsg.png" 
+     },
     "reviewee": {
         "name": "Reviewee Website",
         "path": "https://reviewee.xyz",
