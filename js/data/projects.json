@@ -10,5 +10,11 @@
         "path": "https://reviewee.xyz",
         "description": "Fully operational review website, with functionality to add a restaurant or a hotel, review the hotel, and create bookings.",
         "image": "https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    "tic-tac-toe": {
+        "name": "Tic Tac Toe",
+        "path": "/projects/tic-tac-toe/index.html",
+        "description": "This is a classic game of tic-tac-toe developed with HTML, CSS and JS for the core logic.",
+        "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1724112848/Screenshot_2024-08-20_011243_jmasna.png"
     }
 }

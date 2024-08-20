@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
+    <button>Back</button>
     <main>
         <h1>Tic Tac Toe</h1>
         <div class="score-container">
-            <h2 id="x-wins-count">Wins X: 0</h2>
-            <h2 id="o-wins-count">Wins O: 0</h2>
+            <h2 id="total-games">Total Games: <span id="total-games-count">0</span></h2>
+            <h2 id="x-name">Wins X: <span id="x-wins-count">0</span> </h2>
+            <h2 id="o-name">Wins O: <span id="o-wins-count">0</span></h2>
         </div>
         <div class="info-container">
             <p id="info-board">X Plays</p>
@@ -37,7 +39,8 @@
             </div>
         </section>
         <div class="navigation-buttons">
-            <button class="button-start-again">Play Again</button>
+           <!-- u <button id="start-again-btn" class="button-start-again">Play Again</button>
+            <btton id="reset-table-btn" class="button-start-again">Reset Table</button> -->
         </div>
     </main>
     <script src="scripts.js"></script>

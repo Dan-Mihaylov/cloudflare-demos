@@ -6,6 +6,15 @@ const playerElements = {
     'o': createOElement()
 }
 const infoBoardEl = document.getElementById('info-board');
+const navButtonsEl = document.querySelector('.navigation-buttons');
+
+let winsX = 0;
+let winsO = 0;
+let gamesPlayed = 0;
+
+const winnerBackground = 'rgb(214, 245, 214)';
+const loserBackground = 'rgb(255, 204, 204)';
+const defaultBackground = '#fff';
 
 function createOElement() {
     const iElement = document.createElement('i');
@@ -55,9 +64,18 @@ function playThere(event) {
 }
 
 function checkForWinner(playerSymbol) {
-    checkRows();
-    checkCols();
-    checkDiagonals(playerSymbol.getAttribute('data-player'));
+    
+    const player = playerSymbol.getAttribute('data-player')
+
+    const rowsWinner = checkRows(player);
+    const colsWinner = checkCols(player);
+    const diagonalsWinner = checkDiagonals(player);
+    
+    if (moves == 9 && (!rowsWinner && !colsWinner && !diagonalsWinner)) {
+        lastMoveShowResetButton();
+        countGame();
+    }
+    
 }
 
 function checkDiagonals(player) {
@@ -71,7 +89,8 @@ function checkDiagonals(player) {
         }
 
         if (rightDiagonal.length == 3) {
-            win(player, rightDiagonal)
+            win(player, rightDiagonal);
+            return player
         }
 
         const row = i;
@@ -83,18 +102,19 @@ function checkDiagonals(player) {
 
         if (leftDiagonal.length == 3) {
             win(player, leftDiagonal);
+            return player;
         }
     }
 }
 
-function checkCols() {
+function checkCols(player) {
     for (let i = 0; i < 3; i++) {
         let pattern = new Array();
         let currPlayer = '';
 
         for (let j = 0; j < 3; j++) {
             let currButton = buttonsMatrix[j][i];
-            console.log(currButton);
+
             if (j == 0 && currButton.children.length > 0) {
                 currPlayer = currButton.children[0].getAttribute('data-player');
                 pattern.push(currButton);
@@ -110,11 +130,14 @@ function checkCols() {
         }
         if (pattern.length == 3) {
             win(currPlayer, pattern);
+            return player;
         }
     }
 }
 
-function checkRows() {
+function checkRows(player) {
+    let winner;
+
     buttonsMatrix.forEach(row => {
         const [colOne, colTwo, colThree] = row;
         if (colOne.children.length > 0 && colTwo.children.length >0 && colThree.children.length > 0) {
@@ -123,13 +146,16 @@ function checkRows() {
             const colThreeData = colThree.children[0].getAttribute('data-player');
 
             const result = new Set([colOneData, colTwoData, colThreeData]);
-            console.log(result);
+
             if (result.size === 1) {
                 win(colOneData, [colOne, colTwo, colThree]);
-
+                console.log(colOneData, 'COL ONE DATA!');
+                winner = player;
             }
         }
-    })
+    });
+
+    return winner;
 }
 
 function win(winner, buttonsArray) {
@@ -138,20 +164,48 @@ function win(winner, buttonsArray) {
     adjustScores(winner);
     disableButtons();
     showStartAgain();
+    countGame();
 }
 
 function displayWinner(winner) {
-    const winningMessage = `The Winner Is ${winner}`;
+    const winningMessage = `The Winner Is ${winner.toUpperCase()}`;
     infoBoardEl.textContent = winningMessage;
 }
 
 function markWinningPattern(buttonsArray) {
-    buttonsArray.map(button => button.style.backgroundColor = 'rgb(142, 202, 230)')
+    buttonsArray.map(button => button.style.backgroundColor = winnerBackground)
 }
 
 function adjustScores(winner) {
-    const winnerCountEl = winner == 'x' ? document.getElementById('x-wins-count') : document.getElementById('o-wins-count');
-    console.log(winnerCountEl, 'winner element');
+    const xWinsCountEl = document.getElementById('x-wins-count');
+    const oWinsCountEl = document.getElementById('o-wins-count');
+
+    winner == 'x' ? winsX += 1 : winsO += 1;
+
+    xWinsCountEl.textContent = winsX;
+    oWinsCountEl.textContent = winsO;
+
+    colorizeScoreCards();
+}
+
+function colorizeScoreCards() {
+    const xScoreEl = document.getElementById('x-name');
+    const oScoreEl = document.getElementById('o-name');
+
+    if (winsX > winsO) {
+        xScoreEl.style.backgroundColor = winnerBackground;
+        oScoreEl.style.backgroundColor = loserBackground;
+        return;
+    }
+
+    if (winsO > winsX) {
+        xScoreEl.style.backgroundColor = loserBackground;
+        oScoreEl.style.backgroundColor = winnerBackground;
+        return;
+    }
+
+    xScoreEl.style.backgroundColor = defaultBackground;
+    oScoreEl.style.backgroundColor = defaultBackground;
 }
 
 function disableButtons() {
@@ -159,10 +213,63 @@ function disableButtons() {
 }
 
 function showStartAgain() {
-    const startAgainButton = document.querySelector('.button-start-again');
-    startAgainButton.style.opacity = '100';
+    
+    const startAgainButton = document.createElement('button');
+
+    startAgainButton.textContent = 'Play Again';
+    startAgainButton.classList.add('button-start-again');
+    startAgainButton.style.opacity = '0';
+    startAgainButton.addEventListener('click', resetGame);
+    
+    navButtonsEl.append(startAgainButton);
+
+    setTimeout(() => startAgainButton.style.opacity = '100', 10);
 }
 
 function resetGame() {
-    console.log('resetting game')
+    buttonsMatrix.forEach(row => row.map(button => {
+        const backgroundColor = '#fff';
+
+        button.removeAttribute('disabled');
+        button.innerHTML = '';
+        button.style.backgroundColor = backgroundColor;
+
+        infoBoardEl.textContent = `${currentPlayer.toUpperCase()} Plays`;
+        moves = 0;
+    }))
+
+    navButtonsEl.innerHTML = '';
 }
+
+function lastMoveShowResetButton() {
+    const resetGameButton = document.createElement('button');
+
+    resetGameButton.textContent = 'Reset Table';
+    resetGameButton.classList.add('button-start-again');
+    resetGameButton.style.opacity = '0';
+    resetGameButton.addEventListener('click', resetGame);
+    
+    navButtonsEl.append(resetGameButton);
+
+    setTimeout(() => resetGameButton.style.opacity = '100', 10);
+}
+
+function countGame() {
+    gamesPlayed += 1;
+
+    const counterEl = document.getElementById('total-games-count');
+    
+    counterEl.style.opacity = '0';
+    setTimeout(() => counterEl.textContent = gamesPlayed, 500);
+
+    setTimeout(() => counterEl.style.opacity = '100', 500);
+}
+
+function displayButtonBack() {
+    const buttonBackEl = document.querySelector('body > button');
+    buttonBackEl.style.opacity = '100';
+
+    buttonBackEl.addEventListener('click', () => history.back());
+}
+
+displayButtonBack();

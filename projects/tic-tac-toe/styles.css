@@ -8,11 +8,31 @@
 body {
     padding: 2em;
     height: 100vh;
+    position: relative;
 }
 
 html {
     font: 14px/1.5 Lato, sans-serif;
     color: rgb(2, 48, 71);
+}
+
+h1 {
+    font-weight: lighter;
+}
+
+body > button {
+    border: none;
+    background-color: inherit;
+    font-size: 1.2rem;
+    color: #888;
+    transition: color 0.5s linear, opacity 0.5s linear;
+    opacity: 0;
+}
+
+body > button:hover {
+    cursor: pointer;
+    color: #00274f;
+
 }
 
 main {
@@ -24,6 +44,34 @@ main {
     align-items: center;
     margin: 0 auto;
 }
+
+.score-container {
+    max-width: 20rem;
+    color: rgb(2, 48, 71, 0.8);
+    font-weight: 100;
+    margin-top: 2em;
+    width: 100%;
+    box-shadow: 0 0 1em 0 rgb(2, 48, 71, 0.3);
+    border-radius: 0.3em;
+    overflow: hidden;
+    transition: max-width 0.7s linear;
+}
+
+.score-container h2 {
+    position: relative;
+    border-bottom: 1px solid rgb(2, 48, 71, 0.1);
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    transition: background-color 0.5s linear;
+}
+
+#total-games-count {
+    transition: opacity 0.5s linear;
+}
+
 
 .content {
     background-color: #fff;
@@ -42,7 +90,7 @@ main {
     padding: 1em;
     box-shadow: 0 0 1em 0 rgb(2, 48, 71, 0.3);
     border-radius: 0.5em;
-    background-color: #eee;
+    background-color: rgb(2, 48, 71, 0.8);
     transition: max-width 0.7s linear;
 }
 
@@ -60,7 +108,7 @@ div button {
     aspect-ratio: 1/1;
     background-color: #fff;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     font-size: 1.5rem;
     transition: background-color 0.3s linear;
 }
@@ -103,6 +151,11 @@ div button:hover {
     transition: max-width 2s linear;
 }
 
+#total-games {
+    background-color: rgb(2, 48, 71, 0.8);
+    color: #eee;
+}
+
 
 @media screen and (max-width: 600px) {
     .game-container {
@@ -110,6 +163,10 @@ div button:hover {
     }
 
     .info-container {
+        max-width: 30rem;
+    }
+
+    .score-container {
         max-width: 30rem;
     }
 }

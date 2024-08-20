@@ -65,31 +65,41 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 30rem;
-    max-width: 1400px;
-    margin-top: 2rem;
+    min-height: 60rem;
+    max-width: 1800px;
+    /* margin-top: 2rem; */
 }
 
 .banner-mask {
     position: absolute;
     right: -40rem;
-    bottom: -10rem;
+    bottom: -30rem;
     z-index: -1;
     rotate: -40deg;
-    height: 40rem;
+    height: 60rem;
     width: 100%;
     background-color: var(--lightBlue);
 }
 
 .banner-mask-2 {
     position: absolute;
-    right: 20rem;
-    bottom: 20rem;
+    right: 40rem;
+    bottom: 30rem;
     z-index: -1;
     rotate: -40deg;
-    height: 30rem;
+    height: 60rem;
     width: 100%;
     background-color: var(--lightOrange);
+}
+
+.section-banner h1 {
+    font-size: 5rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.section-banner p {
+    font-size: 1.2rem;
 }
 
 /* Section Project Cards */
@@ -119,7 +129,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 20rem;
-    height: 25rem;
+    height: 30rem;
     overflow: hidden;
     border-radius: 0.3em;
     box-shadow: 0 0 1em 0 rgb(2, 48, 71, 0.2);
@@ -131,8 +141,9 @@ main {
 }
 
 .media img {
-    object-fit: cover;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card article {
@@ -142,13 +153,18 @@ main {
 }
 
 .card article h3 {
+    display: flex;
+    justify-content: space-between;
     font-size: 1.2rem;
     border-bottom: 1px solid rgb(2, 48, 71, 0.1);
     font-weight: normal;
+    padding: 1em 0.5em;
+    line-height: 1;
 }
 
 .card article > p {
-    margin-top: 1em;
+    margin: 1em 0 2em 0;
+    padding: 0 0.5em;
 }
 
 .controls {
@@ -156,9 +172,24 @@ main {
     bottom: 0;
     left:0;
     right: 0;
-    background-color: var(--lightOrange);
-    padding: 0.3em 1em;
+    background-color: var(--lightBlue);
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    color: var(--slate);
+    transition: background-color 0.5s linear, color 0.5s linear;
 }
+
+.controls:hover {
+    background-color: var(--slate);
+    color: var(--whiteFont);
+}
+
+article:hover  a {
+    background-color: var(--darkBlue);
+    color: var(--whiteFont);
+}
+
+
 
 
 
@@ -189,5 +220,36 @@ footer p {
     .section-banner p {
         max-width: 80%;
         margin-top: 2rem;
+    }
+
+    .card article h3 {
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .controls {
+        text-align: center;
+    }
+
+    .left-nav-container p {
+        display: none;
+    }
+
+    .left-nav-container {
+        padding: 0.5em 0;
+    }
+
+    .section-banner h1 {
+        font-size: 3.2rem;
+        font-weight: lighter;
+        text-align: center;
+    }
+    
+    .section-banner p {
+        font-size: 1rem;
+    }
+
+    .cards-container {
+        gap: 10em;
     }
 }
