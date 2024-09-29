@@ -1,10 +1,10 @@
 {
-    "card": {
-        "name": "Review Card",
-        "path": "/projects/review-card/reviews.html",
-        "description": "Simple review card, with a touch of JS",
-        "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1723823925/Screenshot_2024-08-16_163849_usvvsg.png" 
-     },
+    "tiny-tale-factory": {
+        "name": "Tiny Tale Factory",
+        "path": "https://github.com/Dan-Mihaylov/tinytalefactory_project",
+        "description": "A project that utilizes OpenAI to generate customized story-books including the graphics.",
+        "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1727645155/tinytalefactory_vgsjsm.png"
+    },
     "reviewee": {
         "name": "Reviewee Website",
         "path": "https://reviewee.xyz",
@@ -16,5 +16,11 @@
         "path": "/projects/tic-tac-toe/index.html",
         "description": "This is a classic game of tic-tac-toe developed with HTML, CSS and JS for the core logic.",
         "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1724112848/Screenshot_2024-08-20_011243_jmasna.png"
-    }
+    },
+    "card": {
+        "name": "Review Card",
+        "path": "/projects/review-card/reviews.html",
+        "description": "Simple review card, with a touch of JS",
+        "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1723823925/Screenshot_2024-08-16_163849_usvvsg.png"
+     }
 }
