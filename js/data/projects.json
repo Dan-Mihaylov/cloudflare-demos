@@ -1,8 +1,8 @@
 {
     "tiny-tale-factory": {
-        "name": "Tiny Tale Factory",
-        "path": "https://github.com/Dan-Mihaylov/tinytalefactory_project",
-        "description": "A project that utilizes OpenAI to generate customized story-books including the graphics.",
+        "name": "Tinytalefactory",
+        "path": "https://tinytalefactory.com",
+        "description": "A project that utilizes OpenAI to generate customized story-books including the graphics. Deployed on Azure.",
         "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1727645155/tinytalefactory_vgsjsm.png"
     },
     "reviewee": {
