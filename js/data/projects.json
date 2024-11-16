@@ -11,6 +11,12 @@
         "description": "Fully operational review website, with functionality to add a restaurant or a hotel, review the hotel, and create bookings.",
         "image": "https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
+    "database-migrator": {
+        "name": "Database Migrator App",
+        "path": "https://github.com/Dan-Mihaylov/database-migrator",
+        "description": "A small application using Flask and Sqlalchemy to migrate your database from one host to another.",
+        "image": "https://res.cloudinary.com/dh7ur0uv3/image/upload/v1731072405/cat5_xmxrvm.webp"
+    },
     "tic-tac-toe": {
         "name": "Tic Tac Toe",
         "path": "/projects/tic-tac-toe/index.html",
